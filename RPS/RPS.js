@@ -43,7 +43,6 @@ function getInput(n,text){
 
 function round(){
     while(true){
-        console.clear();
         var round = parseInt(prompt("How many round you want to play? Enter a number: "));
         if(round <= 0 || isNaN(round)){
             console.log("Not a valid input, try again!")
@@ -54,29 +53,38 @@ function round(){
     return round
 }
 
-
-
-var userInputValue = [1,2];
-var userInput = round();
-for(var i = 1; i <= userInput; i++){
+function playGame(){
+    var userInputValue = [1,2];
+    var userInput = round();
     welcome();
-    Rps(getInput(values,"enter your choice: "), getRandomInt(3));
-    if( i == userInput){
-        var ques = getInput(userInputValue,"Play again?(1 for yes, 2 for no): ");
-        if(ques == 1){
-    console.log(`Score: You ${userP} - ${cpuP} Cpu`);
-            i = 0;
-            userInput = round();
-            userP = 0;
-            cpuP = 0;
-        }else if(ques == 2){
-            break;
+    for(var i = 1; i <= userInput; i++){
+        Rps(getInput(values,"enter your choice: "), getRandomInt(3));
+        if( i == userInput){
+            var ques = getInput(userInputValue,"Play again?(1 for yes, 2 for no): ");
+            if(ques == 1){
+                i = 0;
+                userInput = round();
+                userP = 0;
+                cpuP = 0;
+            }else if(ques == 2){
+                break;
+            }
         }
     }
+    if(userP > cpuP){
+        console.log(`Score: You ${userP} - ${cpuP} Cpu`);
+        console.log('You WIN');
+    }else if(cpuP > userP){
+        console.log(`Score: You ${userP} - ${cpuP} Cpu`);
+        console.log('You LOSE');
+    }else{
+        console.log(`Score: You ${userP} - ${cpuP} Cpu`);
+        console.log('It a TIED');
+    }
 }
-console.log(`Score: You ${userP} - ${cpuP} Cpu`);
 
 
+playGame();
 
 
 
