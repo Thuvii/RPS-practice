@@ -19,7 +19,8 @@ function Rps(human, Cpu){
 function resultMessage(a,b){
     document.querySelector('#annouce').innerText = `Score: You ${a} - ${b} Cpu`;
     if(userPoint > cpuPoint){
-        console.log('You WIN');
+        const newDiv = document.createElement('div');
+        
     }else if(cpuPoint > userPoint){
         console.log('You LOSE');
     }else{  
