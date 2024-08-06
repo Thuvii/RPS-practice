@@ -5,27 +5,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="RPS.css">
     <title>Document</title>
-    <script src="/RPS/RPS.js" defer></script>
+    <script src="RPS.js" defer></script>
     <style>
-      /* #resetGame {
-          display: ;
-      } */
+      #resetGame {
+          display: none;
+      }
   </style>
   </head>
   <body>
     <h1>ROCK PAPER SCISSOR</h1>
     <section>
       <div id="btn-container">
-        <button onclick="playGame(1)"><img src="../rock.webp" alt=""></button>
-        <button onclick="playGame(2)"><img src="../paper.webp" alt=""></button>
-        <button onclick="playGame(3)"><img src="../scissor.webp" alt=""></button>
+        <button onclick="playGame(1)"><img src="./RPS/rock.webp" alt=""></button>
+        <button onclick="playGame(2)"><img src="./RPS/paper.webp" alt=""></button>
+        <button onclick="playGame(3)"><img src="./RPS/scissor.webp" alt=""></button>
       </div>
       <div id="result"></div>
       <div class="container">
         <div id="playerP">player point</div>
         <div id="cpuP">cpu point</div>
       </div>
-      <div id="annouce">this is annouce</div>
+      <div id="annouce"></div>
   
       <button id="resetGame" onclick="resetGame()">play again</button>
     </section>
